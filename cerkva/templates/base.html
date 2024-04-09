@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css.css')}}">
+    <meta charset="UTF-8">
+    {% block title %}
+    {% if title %}
+        <title>Церква допоможе {{title}}</title>
+    {% else %}
+        <title>Церква допоможе всім</title>
+
+    {% endif %}
+    {% endblock title %}
+
+</head>
+
+
+<body class="body">
+
+    <div class="page">
+{% block content %}
+<div class="menu">
+{% block mainmenu %}
+
+<ul class="mainmenu"  >
+{% for m in menu %}
+    <li class="menu-punkt" ><a href="{{m.url}}" >{{m.title}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock mainmenu %}
+</div>
+<div class="General-part">
+General part
+</div>
+    <div class="Footer">
+    <p>Footer</p>
+    </div>
+{% endblock %}
+    </div>
+</body>
+</html>
+
+
